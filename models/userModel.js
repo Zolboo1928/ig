@@ -5,6 +5,9 @@ const userSchema = new Schema(
     password: { type: String, required: true },
     email: { type: String, required: true },
     profileImage: { type: String },
+    posts: [{ type: mongoose.Types.ObjectId, ref: "posts" }],
+    following: [{ type: mongoose.Types.ObjectId , ref:"users"}],
+    followers: [{ type: mongoose.Types.ObjectId , ref:"users"}],
   },
   { timeStamps: true }
 );
