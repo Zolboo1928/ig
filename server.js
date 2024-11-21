@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 
 connectMongoose()
-app.use(userRoute)
-app.use(postRoute)
+app.use("/user",userRoute)
+app.use("/post",postRoute)
 
 app.listen(Port,()=> console.log(`running on ${Port}`))
